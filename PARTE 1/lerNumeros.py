@@ -122,3 +122,23 @@ gratificao = float(input('Insira a porcentagem de sua gratificação: '))/100;
 imposto = float(input('Insira a porcentagem do desconto do imposto de renda: '))/100;
 salario = (salario * (1+gratificao)) - (salario*imposto);
 print('O seu sálario é de: ',salario);
+
+# Programa para ajudar vendedores
+valor = float(input('Insira o valor total: '));
+tipo = input('Parcelado(P) ou À Vista (V): ');
+if tipo == 'V' :
+    valor = valor * 0.9
+    print ('O valor a ser pago é: ', valor);
+    print ('A comissão do vendedor é de: ', valor * 0.05)
+elif tipo == 'P' :
+    parcelas = int(input('Insira a quantidade de parcelas: '));
+    print ('Valor a ser pago nas parcelas: ', valor/parcelas);
+    print ('A comissão do vendedor é de: ', valor * 0.05);
+else :
+    print ('Operação Inválida');
+
+# Programa que recebe a altura de um degrau e altura que deseja alcançar, calcule e imprima a quantiade de degraus a serem subidos para alcançar o objetivo
+altura_degraus = float(input('Insira a altura do degrau: '));
+altura_objetivo = float(input('Insira a altura que deseja alcançar: '));
+degraus = altura_objetivo / altura_degraus;
+print ('Para alcançar seu objetivo é necessário subir: ', degraus , ' degraus');
