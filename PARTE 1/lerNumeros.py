@@ -142,3 +142,61 @@ altura_degraus = float(input('Insira a altura do degrau: '));
 altura_objetivo = float(input('Insira a altura que deseja alcançar: '));
 degraus = altura_objetivo / altura_degraus;
 print ('Para alcançar seu objetivo é necessário subir: ', degraus , ' degraus');
+
+# Programa que le um número inteiro positivo de três digitos e gera outro número formado pelos dígitos invertidos
+numero = int(input('Insira um número intereio de 3 digítos (100 a 999): '));
+# Verifica se o número é válido
+while numero < 100 or numero > 999:
+    numero = int(input('Número inválido! Insira um número intereio de 3 digítos (100 a 999): '));
+# Transforma o número em string
+numero = str(numero);
+# Inverte o número
+numero = numero[::-1];
+print('Número invertido: ', numero);
+
+# Leia um número inteiro de 4 digitos ( de 1000 a 9999) e imprima 1 dígito por linha.
+numero = int(input('Digite um número inteiro de 4 digitos: '));
+i = 0
+if numero in range(1000, 10000):
+    numero = str(numero);
+    while i < 4:
+        print(numero[i]);
+        i += 1;
+else:
+    print('Número inválido');
+
+# Escreva um programa que leais as coordenas x e y de pontos no R² e calcule sua distância da origem (0,0).
+import math;
+X_a = float(input('Digite a coordenada Xa: '));
+y_a = float(input('Digite a coordenada Ya: '));
+X_b = float(input('Digite a coordenada Xb: '));
+y_b = float(input('Digite a coordenada Yb: '));
+distancia = math.sqrt(pow(X_b - X_a, 2) + pow(y_b - y_a, 2));
+print('A distância da origem é: ', distancia);
+
+# Crie um programa que leia quanto dinheiro três amigos investiram em uma loteria e o valor do prêmio. O programa deve calcular e imprimir quanto cada um irá receber do prêmio com base no valor investido.
+amigo_1 = float(input('Digite quanto o primeiro amigo investiu: '));
+amigo_2 = float(input('Digite quanto o segundo amigo investiu: '));
+amigo_3 = float(input('Digite quanto o terceiro amigo investiu: '));
+total = amigo_1 + amigo_2 + amigo_3;
+
+premio = float(input('Digite o valor do prêmio: '));
+amigo_1 = (amigo_1 / total) * premio;
+amigo_2 = (amigo_2 / total) * premio;
+amigo_3 = (amigo_3 / total) * premio;
+
+print('O valor total investido foi: ', total);
+print('O primeiro amigo receberá: ', amigo_1);
+print('O segundo amigo receberá: ', amigo_2);
+print('O terceiro amigo receberá: ', amigo_3);
+
+# Faça um programa para ler as dimensões de um terreno (comprimento e largura) e o preço do metro da tela. O programa deve calcular e imprimir o valor total para cercar o terreno com tela.
+comprimento = float(input('Insira o Comprimento do Terreno em metros: '));
+largura = float(input('Insira a Largura do Terreno em metros: '));
+valor = float(input('Insira o Preço do metro da Tela: '));
+if comprimento == largura:
+    valor = valor * (comprimento * 4);
+else:
+    valor = valor * (comprimento * 2 + largura * 2);
+
+print('O valor total é: R$', valor);
