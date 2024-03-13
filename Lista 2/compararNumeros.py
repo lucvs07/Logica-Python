@@ -79,3 +79,23 @@ if emprestimo > salario * 1.02 :
 else :
     print('Empréstimo Concedido')
 
+# Receba a altura e o sexo de uma pessoa e calcule e mostre seu peso ideal
+sexo = input('Insira seu genêro Feminino (F) ou Masculino (M): ');
+altura = float(input('Insira sua altura: '))
+def peso_ideal(altura, sexo):
+    if sexo == 'F':
+        return (62.1 * altura) - 44.7
+    elif sexo == 'M' :
+        return (72.7 * altura) - 58
+    else :
+        print('Genêro inserido inválido');
+print(f'O peso ideal é igual a: {peso_ideal(altura, sexo)}');
+
+# Ler um número inteiro e calcular a soma de seus algarismos
+# Não Finalizado
+n = int(input('Insira um número inteiro: '))
+n = str(n)
+i = 0
+while len(n) != 0 :
+    soma = soma + int(n[i]);
+print (f'A soma dos algarismos é {soma}');
