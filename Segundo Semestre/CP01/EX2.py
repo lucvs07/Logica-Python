@@ -9,10 +9,10 @@ def ordenar_nomes(nomes, inicio, fim):
     '''
     função para ordenar os nomes entre o índice inicial e o índice final em ordem alfabética
     '''
-    if inicio < 0 or inicio > 19 or fim < 0 or fim > 19 or fim < inicio:
+    if inicio-1 < 0 or inicio-1 > 19 or fim-1 < 0 or fim-1 > 19 or fim-1 < inicio-1:
         return 'Índices inválidos!'
-    nomes[inicio:fim+1] = sorted(nomes[inicio:fim+1])
-    return nomes[inicio:fim+1]
+    nomes[inicio-1:fim] = sorted(nomes[inicio-1:fim])
+    return nomes[inicio-1:fim]
 
 def receber_nomes():
     nomes = []
