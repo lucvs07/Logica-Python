@@ -13,11 +13,22 @@ def ordenar_nomes(nomes, inicio, fim):
         return 'Índices inválidos!'
     nomes[inicio:fim+1] = sorted(nomes[inicio:fim+1])
     return nomes[inicio:fim+1]
+
+def receber_nomes():
+    nomes = []
+    print('Inserir 20 nomes')
+    i = 0
+    while i < 20 :
+        n = input(f'Insira o {i+1}° nome: ')
+        i = i + 1
+        nomes.append(n)
+    return nomes
+
 def main():
     '''
     função principal
     '''
-    nomes = ['João', 'Maria', 'José', 'Ana', 'Pedro', 'Mariana', 'Carlos', 'Beatriz', 'Lucas', 'Laura', 'Fernando', 'Gabriela', 'Rafael', 'Carolina', 'Paulo', 'Juliana', 'Rodrigo', 'Isabela', 'Gustavo', 'Camila']
+    nomes = receber_nomes()
     inicio = int(input('Digite o índice inicial: '))
     fim = int(input('Digite o índice final: '))
     print(ordenar_nomes(nomes, inicio, fim))

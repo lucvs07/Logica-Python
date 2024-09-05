@@ -6,47 +6,38 @@ numeros = []
 
 def input_numeros():
     '''Função para receber os números do usuário'''
-    x = float(input('Digite o primeiro número (x): '))
-    y = float(input('Digite o segundo número (y): '))
-    z = float(input('Digite o terceiro número (z): '))
+    x = int(input('Digite o primeiro número (x): '))
+    y = int(input('Digite o segundo número (y): '))
+    z = int(input('Digite o terceiro número (z): '))
     return x, y, z
 
-def calcular_media_geometrica(x, y, z):
-    '''Calcula a média geométrica de 3 variáveis'''
-    res = (x * y * z) ** (1/3)
-    dados_do_calculo = {'x':x, 'y': y, 'z': z, 'Tipo':'Geométrica', 'Resultado':res}
-    print(dados_do_calculo)
+def resultados(x,y,z,res,tipo):
+    dados_do_calculo = {'x':x, 'y': y, 'z': z, 'Tipo':tipo, 'Resultado':res}
     numeros.append(dados_do_calculo)
     print(f'A média geométrica de {x}, {y} e {z} é {res}')
     voltar_tela_principal()
 
 
+def calcular_media_geometrica(x, y, z):
+    '''Calcula a média geométrica de 3 variáveis'''
+    res = (x * y * z) ** (1/3)
+    resultados(x, y, z, res,tipo='Geométrica')
+
+
 def calcular_media_ponderada(x, y, z):
     '''Calcula a média ponderada de 3 variáveis'''
     res = (x + 2 * y + 3 * z) / 6
-    dados_do_calculo = {'x':x, 'y': y, 'z': z, 'Tipo':'Ponderada', 'Resultado':res}
-    print(dados_do_calculo)
-    numeros.append(dados_do_calculo)
-    print(f'A média ponderada de {x}, {y} e {z} é {res}')
-    voltar_tela_principal()
+    resultados(x, y, z, res,tipo='Ponderada')
 
 def calcular_media_aritmetica(x, y, z):
     '''Calcula a média aritmética de 3 variáveis'''
     res = (x + y + z) / 3
-    dados_do_calculo = {'x':x, 'y': y, 'z': z, 'Tipo':'Aritmética', 'Resultado':res}
-    print(dados_do_calculo)
-    numeros.append(dados_do_calculo)
-    print(f'A média aritmética de {x}, {y} e {z} é {res}')
-    voltar_tela_principal()
+    resultados(x, y, z, res,tipo='Aritmética')
 
 def calcular_media_harmonica(x, y, z):
     '''Calcula a média harmônica de 3 variáveis'''
     res = 3 / (1/x + 1/y + 1/z)
-    dados_do_calculo = {'x':x, 'y': y, 'z': z, 'Tipo':'Harmônica', 'Resultado':res}
-    print(dados_do_calculo)
-    numeros.append(dados_do_calculo)
-    print(f'A média harmônica de {x}, {y} e {z} é {res}')
-    voltar_tela_principal()
+    resultados(x, y, z, res,tipo='Harmônica')
 
 def limpar_tela():
     '''Limpa a tela do terminal'''
