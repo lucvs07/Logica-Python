@@ -1,0 +1,1 @@
+Use Jupyter Notebook with Sympy to solve calculus exercises
